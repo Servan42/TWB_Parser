@@ -2,7 +2,7 @@
 
 ## Description
 
-This application reads Skullgirls matchs from a CSV file and add them into the [TunaWithBacon](tunawithbeacon.com) database.
+This application reads Skullgirls matchs from a CSV file and add them into the [TunaWithBacon](https://tunawithbacon.com/) database.
 
 ## Requirements and usage:
 
@@ -30,8 +30,8 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 * ServerAddress     : The name/address of the server where the database is.
 * PortMySQL         : Port of the MySQL database address. Useless if you are using SQL Server.
 * DatabaseName      : The name of the database.
-* DatabaseUsername  : The username of the account connecting to the database through SQL Authentication.
-* DatabasePassword  : The password of the account connecting to the database through SQL Authentication.
+* DatabaseUsername  : The username of the account connecting to the database.
+* DatabasePassword  : The password of the account connecting to the database.
 
 ## Behavior
 
@@ -47,4 +47,4 @@ You must put the matchs in the right order in the CSV as they will be inserted i
 
 This software is a free software that is under the [MIT license](LICENSE) and is maintained by Servan CHARLOT ([@Servan42](https://twitter.com/servan42)).
 
-[TunaWithBacon](tunawithbeacon.com) is a website created and maintained by [Gelato](https://twitter.com/gelatosgc).
+[TunaWithBacon](https://tunawithbacon.com/) is a website created and maintained by [Gelato](https://twitter.com/gelatosgc).
