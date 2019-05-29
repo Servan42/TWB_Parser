@@ -8,7 +8,7 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 
 1. Make sure to have the [config.xml](config.xml) in the same folder as the program.
 2. Make sure you filled the CSV and the config.xml with valid data.
-3. Make sure that the computer on which you run the program has acces to the database.
+3. Make sure that the computer on which you run the program has access to the database.
 4. If you are using a SQL Server database, put "SQLServer" in the config.xml on the line "DatabaseType" and make sure that your database allows SQL Authentication mode, because it does not work with Windows authentication.
 5. If you are using a MySQL databse, put "MySQL" in the config.xml on the line "DatabaseType". To be able to compile the application, you need to add the [.NET MySQL Connector Library](https://dev.mysql.com/downloads/connector/net/) to your Visual Studio.
 6. Start TWB_Parser.exe
@@ -25,13 +25,13 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 
 ### config.xml Information:
 
-* CSVMatchsFilename : The path or filename of the CSV file.
-* DatabaseType      : "SQLServer" or "MySQL" depending on the database you are using.
-* ServerAddress     : The name/address of the server where the database is.
-* PortMySQL         : Port of the MySQL database address. Useless if you are using SQL Server.
-* DatabaseName      : The name of the database.
-* DatabaseUsername  : The username of the account connecting to the database.
-* DatabasePassword  : The password of the account connecting to the database.
+* **CSVMatchsFilename**: The path or filename of the CSV file.
+* **DatabaseType**: "SQLServer" or "MySQL" depending on the database you are using.
+* **ServerAddress**: The name/address of the server where the database is.
+* **PortMySQL**: Port of the MySQL database address. Useless if you are using SQL Server.
+* **DatabaseName**: The name of the database.
+* **DatabaseUsername**: The username of the account connecting to the database.
+* **DatabasePassword**: The password of the account connecting to the database.
 
 ## Behavior
 
