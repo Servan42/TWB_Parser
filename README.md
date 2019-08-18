@@ -22,6 +22,7 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 * The `Date` format is YYYY-MM-DD.
 * The `Netplay` is 0 or 1, matching Offline and Online.
 * For more information about `PXCharX`, check [this file](TWB_Parser/CharEnum.cs).
+* For more information about `Region` and `Version` check [this file](TWB_Parser/CSVFileLine.cs).
 
 ### config.xml Information:
 

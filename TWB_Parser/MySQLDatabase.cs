@@ -115,7 +115,7 @@ namespace TWB_Parser
                 // Attempt to roll back the transaction.
                 try
                 {
-                    Console.WriteLine("Error while inserting the data. Attempting to rollback.");
+                    Console.WriteLine("ERROR while inserting the data. Attempting to rollback.");
                     transaction.Rollback();
                     Console.WriteLine("Rollback successful.");
                 }

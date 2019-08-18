@@ -17,9 +17,9 @@ namespace TWB_Parser
             Console.WriteLine("|-----------------------------------------|\n" +
                 "| CSV Match Parser for tunawithbeacon.com |\n" +
                 "|-----------------------------------------|\n" +
-                "| Version                           1.1.0 |\n" +
-                "| Release Date                 2019-05-28 |\n" +
-                "| Author                        @Servan42 |\n" +
+                "| Version                           1.1.1 |\n" +
+                "| Release Date                 2019-08-18 |\n" +
+                "| Author & Maintainer           @Servan42 |\n" +
                 "|-----------------------------------------|\n");
 
 
@@ -34,7 +34,7 @@ namespace TWB_Parser
                 List<String> config = Tools.XmlReader(Directory.GetCurrentDirectory() + "\\config.xml");
                 if(config[1] != "MySQL" && config[1] != "SQLServer")
                 {
-                    throw new FormatException("Error: Invalid database type in config.xml. The program only supports \"MySQL\" and \"SQLServer\".");
+                    throw new FormatException("ERROR: Invalid database type in config.xml. The program only supports \"MySQL\" and \"SQLServer\".");
                 }
                 Console.WriteLine("DONE\n");
                 
@@ -58,7 +58,10 @@ namespace TWB_Parser
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Message);
+                // Stacktrace for debugging.
+                // Console.WriteLine("\n" + ex.StackTrace);
+                Console.WriteLine("\nAborting.");
             }
             Console.WriteLine("\nPress any key to close.");
             Console.ReadKey();

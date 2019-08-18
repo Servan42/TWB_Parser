@@ -39,10 +39,11 @@ namespace TWB_Parser
         /// <param name="aPath">The path of the CSV file to load.</param>
         /// <exception cref="ArgumentNullException">The path must not be null.</exception>
         /// <exception cref="FileNotFoundException">In case the file is missing.</exception>
+        /// <exception cref="Exception">If the file is parsed incorrectly</exception>
         public CSVFileData(string aPath)
         {
             if (string.IsNullOrWhiteSpace(aPath)) throw new ArgumentNullException("aPath");
-            if (!File.Exists(aPath)) throw new FileNotFoundException("Error: The file does not exist.", aPath);
+            if (!File.Exists(aPath)) throw new FileNotFoundException("ERROR: The CSV file does not exist.", aPath);
             this.Lines = new List<CSVFileLine>();
             this.Path = aPath;
             // Loading the file
@@ -59,32 +60,26 @@ namespace TWB_Parser
         /// Parses the CSV file and load the lines.
         /// </summary>
         /// <exception cref="FormatException">If the file is not a TWB CSV file.</exception>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">If the file is parsed incorrectly</exception>
         private void ParseCSVFile()
         {
-            try
+            using (StreamReader sr = new StreamReader(Path))
             {
-                using (StreamReader sr = new StreamReader(Path))
+                string currentLine;
+                int lineNumber = 1;
+                currentLine = sr.ReadLine();
+                // Checking if the file is a TWB CSV file.
+                if (currentLine != null && !currentLine.Contains(_CSVHEADER))
                 {
-                    string currentLine;
-                    currentLine = sr.ReadLine();
-                    // Checking if the file is a TWB CSV file.
-                    if (currentLine != null && !currentLine.Contains(_CSVHEADER))
-                    {
-                        throw new FormatException("Error: If the file is not a TWB CSV file.");
-                    }
-                    // Reading the lines and adding them to the list.
-                    while ((currentLine = sr.ReadLine()) != null)
-                    {
-                        CSVFileLine CSVLine = new CSVFileLine(currentLine);
-                        Lines.Add(CSVLine);
-                    }
+                    throw new FormatException("ERROR: The file is not a TWB CSV file. Invalid header.");
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: The file \"{0}\" could not be read.", Path);
-                Console.WriteLine(e.Message);
+                // Reading the lines and adding them to the list.
+                while ((currentLine = sr.ReadLine()) != null)
+                {
+                    lineNumber++;
+                    CSVFileLine CSVLine = new CSVFileLine(currentLine,lineNumber);
+                    Lines.Add(CSVLine);
+                }
             }
         }
 
