@@ -48,4 +48,4 @@ You must put the matchs in the right order in the CSV as they will be inserted i
 
 This software is a free software that is under the [MIT license](LICENSE) and is maintained by Servan CHARLOT ([@Servan42](https://twitter.com/servan42)).
 
-[TunaWithBacon](https://tunawithbacon.com/) is a website created and maintained by [Gelato](https://twitter.com/gelatosgc).
+[TunaWithBacon](https://tunawithbacon.com/) is a website created and maintained by [Gelato](https://twitter.com/dairyfreegelato).
