@@ -21,10 +21,10 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 
 * The `Date` format is YYYY-MM-DD.
 * The `Netplay` is 0 or 1, matching Offline and Online.
-* For more information about `PXCharX`, check [this file](TWB_Parser/CharEnum.cs).
-* For more information about `Region` and `Version` check [this file](TWB_Parser/CSVFileLine.cs).
+* For more information about `PXCharX`, check [this file](List_of_CharactersCode_Regions_Versions.md).
+* For more information about `Region` and `Version` check [this file](List_of_CharactersCode_Regions_Versions.md).
 
-### config.xml Information:
+### TWB_Parser.exe.config (App.config) Information:
 
 * **CSVMatchsFilename**: The path or filename of the CSV file.
 * **DatabaseType**: "SQLServer" or "MySQL" depending on the database you are using.
@@ -46,6 +46,7 @@ You must put the matchs in the right order in the CSV as they will be inserted i
 
 ## License and Maintainers
 
-This software is a free software that is under the [MIT license](LICENSE) and is maintained by Servan CHARLOT ([@Servan42](https://twitter.com/servan42)).
+This software is a free software that is under the [MIT license](LICENSE) and is maintained by Servan CHARLOT ([@Servan42](https://twitter.com/servan42)).  
+Repository link: https://github.com/Servan42/TWB_Parser
 
 [TunaWithBacon](https://tunawithbacon.com/) is a website created and maintained by [Gelato](https://twitter.com/dairyfreegelato).

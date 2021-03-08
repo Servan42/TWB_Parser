@@ -1,5 +1,12 @@
 # TWB_Parser Changelog
 
+## Version 1.2.0 | 2021-03-08
+
++ Adding an enum entry for Annie: "AN".
++ Adding a version check: "Annie Patch" & "Annie Patch Beta".
++ Changing the config management. Switched from "config.txt" to "TWB_Parser.exe.config" to respect C# standards. 
++ Adding a warpup of every enumtypes to make the CSV redaction easier: [List_of_CharactersCode_Regions_Versions](List_of_CharactersCode_Regions_Versions.md).
+
 ## Version 1.1.1 | 2019-08-18
 
 + Adding CSV data checking on: Empty or white space member, Region, Version, Characters acronyms. (Were already there member numbers and header checking). 

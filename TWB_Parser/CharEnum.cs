@@ -70,6 +70,10 @@ namespace TWB_Parser
         /// <summary>
         /// Robo-Fortune
         /// </summary>
-        RF
+        RF,
+        /// <summary>
+        /// Annie
+        /// </summary>
+        AN
     }
 }

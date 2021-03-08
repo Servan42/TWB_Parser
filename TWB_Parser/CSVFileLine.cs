@@ -122,7 +122,9 @@ namespace TWB_Parser
                     && Version != "Fukua Patch"
                     && Version != "MDE"
                     && Version != "SDE"
-                    && Version != "2E") throw new FormatException("Unknown Version.");
+                    && Version != "2E"
+                    && Version != "Annie Patch"
+                    && Version != "Annie Patch Beta") throw new FormatException("Unknown Version.");
 
                 P1Name = splittedLine[5];
                 P1Char1 = (CharEnum) Enum.Parse(typeof(CharEnum),splittedLine[6]);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Threading;
@@ -17,8 +18,8 @@ namespace TWB_Parser
             Console.WriteLine("|-----------------------------------------|\n" +
                 "| CSV Match Parser for tunawithbeacon.com |\n" +
                 "|-----------------------------------------|\n" +
-                "| Version                           1.1.1 |\n" +
-                "| Release Date                 2019-08-18 |\n" +
+                "| Version                           1.2.0 |\n" +
+                "| Release Date                 2021-03-08 |\n" +
                 "| Author & Maintainer           @Servan42 |\n" +
                 "|-----------------------------------------|\n");
 
@@ -30,28 +31,37 @@ namespace TWB_Parser
             try
             {
                 // Read the config.
-                Console.WriteLine("Loading the configuration from config.xml...");
-                List<String> config = Tools.XmlReader(Directory.GetCurrentDirectory() + "\\config.xml");
-                if(config[1] != "MySQL" && config[1] != "SQLServer")
+                Console.WriteLine("Loading the configuration from TWB_Parser.exe.config...");
+                if (!File.Exists("TWB_Parser.exe.config")) throw new FileNotFoundException("ERROR: Config file not found.");
+                if(ConfigurationManager.AppSettings.Get("DatabaseType") != "MySQL" && ConfigurationManager.AppSettings.Get("DatabaseType") != "SQLServer")
                 {
-                    throw new FormatException("ERROR: Invalid database type in config.xml. The program only supports \"MySQL\" and \"SQLServer\".");
+                    throw new FormatException("ERROR: Invalid database type in TWB_Parser.exe.config. The program only supports \"MySQL\" and \"SQLServer\".");
                 }
                 Console.WriteLine("DONE\n");
                 
                 // Parse the CSV file
-                Console.WriteLine("Loading the data from \"{0}\"...", config[0]);
-                CSVFileData dataCSV = new CSVFileData(config[0]);
+                Console.WriteLine("Loading the data from \"{0}\"...", ConfigurationManager.AppSettings.Get("CSVMatchsFilename"));
+                CSVFileData dataCSV = new CSVFileData(ConfigurationManager.AppSettings.Get("CSVMatchsFilename"));
                 Console.WriteLine("DONE - {0} matches found.\n", dataCSV.Lines.Count);
                 
                 // Connect to the database, insert the information, and disconnect.
-                if(config[1] == "SQLServer")
+                if(ConfigurationManager.AppSettings.Get("DatabaseType") == "SQLServer")
                 {
-                    SQLServerDatabase sqlServerDB = new SQLServerDatabase(config[2], config[4], config[5], config[6], dataCSV);
+                    SQLServerDatabase sqlServerDB = new SQLServerDatabase(ConfigurationManager.AppSettings.Get("ServerAddress"),
+                        ConfigurationManager.AppSettings.Get("DatabaseName"),
+                        ConfigurationManager.AppSettings.Get("DatabaseUsername"),
+                        ConfigurationManager.AppSettings.Get("DatabasePassword"), 
+                        dataCSV);
                     Console.WriteLine("\nSuccessful.");
                 }
-                else if (config[1] == "MySQL")
+                else if (ConfigurationManager.AppSettings.Get("DatabaseType") == "MySQL")
                 {
-                    MySQLDatabase mySqlDB = new MySQLDatabase(config[2], config[3], config[4], config[5], config[6], dataCSV);
+                    MySQLDatabase mySqlDB = new MySQLDatabase(ConfigurationManager.AppSettings.Get("ServerAddress"),
+                        ConfigurationManager.AppSettings.Get("PortMySQL"),
+                        ConfigurationManager.AppSettings.Get("DatabaseName"),
+                        ConfigurationManager.AppSettings.Get("DatabaseUsername"),
+                        ConfigurationManager.AppSettings.Get("DatabasePassword"),
+                        dataCSV);
                     Console.WriteLine("\nSuccessful.");
                 }
 
