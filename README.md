@@ -32,9 +32,9 @@ This application reads Skullgirls matchs from a CSV file and add them into the [
 * **DatabaseName**: The name of the database.
 * **DatabaseUsername**: The username of the account connecting to the database.
 * **DatabasePassword**: The password of the account connecting to the database.
-* **RegionList**: The list of every elligible regions, separated by a `;`.
-* **VersionList**: The list of every elligible game version, separated by a `;`.
-* **CharacterList**: The list of every elligible character separated by a `;`. Each character must be written as the `:` separated string `CODE:FullName:alias1:alias2:aliasN`, case insensitive. `CODE` must be at most 2 digits long. `Fullname` is mandatory. The aliases are optional and unlimited. Exemple: `FI:Filia;PS:Parasoul:Para;DB:Double`.
+* **RegionList**: The list of every eligible regions, separated by a `;`.
+* **VersionList**: The list of every eligible game version, separated by a `;`.
+* **CharacterList**: The list of every eligible character separated by a `;`. Each character must be written as the `:` separated string `CODE:FullName:alias1:alias2:aliasN`, case insensitive. `CODE` must be at most 2 digits long. `Fullname` is mandatory. The aliases are optional and unlimited. Exemple: `FI:Filia;PS:Parasoul:Para;DB:Double`.
 
 ## Behavior
 
