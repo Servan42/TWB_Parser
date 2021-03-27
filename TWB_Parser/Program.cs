@@ -18,8 +18,8 @@ namespace TWB_Parser
             Console.WriteLine("|-----------------------------------------|\n" +
                 "| CSV Match Parser for tunawithbeacon.com |\n" +
                 "|-----------------------------------------|\n" +
-                "| Version                           1.2.0 |\n" +
-                "| Release Date                 2021-03-08 |\n" +
+                "| Version                           1.3.0 |\n" +
+                "| Release Date                 2021-03-27 |\n" +
                 "| Author & Maintainer           @Servan42 |\n" +
                 "|-----------------------------------------|\n");
 

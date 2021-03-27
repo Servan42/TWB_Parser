@@ -1,4 +1,8 @@
-# Quick Peak at the enum types to put in the .csv
+# Quick Peak at the default enum types to put in the .csv
+
+## Header
+
+`Event,Date,Region,Netplay,Version,P1Name,P1Char1,P1Char2,P1Char3,P2Name,P2Char1,P2Char2,P2Char3,URL`
 
 ## Region
 
@@ -30,17 +34,17 @@
 
 * N: None
 * AN: Annie
-* BB: BigBand
-* BW: Beowulf
-* CE: Cerebella
+* BB: Big Band *(or BigBand or Band)*
+* BW: Beowulf *(or Beo)*
+* CE: Cerebella *(or Bella)*
 * DB: Double
 * EL: Eliza
 * FI: Filia
 * FU: Fukua
-* MF: Ms Fortune
+* MF: Ms. Fortune *(or Ms.Fortune or MsFortune or MFortune)*
 * PC: Peacock
-* PS: Parasoul
+* PS: Parasoul *(or Para)*
 * PW: Painwheel
-* RF: Robo-Fortune
+* RF: Robo-Fortune *(or Robo)*
 * SQ: Squily
-* VA: Valentine
+* VA: Valentine *(or Val)*

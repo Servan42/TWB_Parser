@@ -1,5 +1,12 @@
 # TWB_Parser Changelog
 
+## Version 1.3.0 | 2021-03-27
+
++ To add modularity in prevision of the next characters release, Region, Version, and Character full names and codes are now to be defined in the "TWB_Parser.exe.config". More info in the [README](README.md).
++ It is now possible to put a character's full name in the [CSV](match_template.csv) instead of its code. The two options can be used at the same time. Default list [here](List_of_CharactersCode_Regions_Versions.md).
++ Character full names or codes are now case insensitive.
++ As a result, removed CharEnum.cs.
+
 ## Version 1.2.0 | 2021-03-08
 
 + Adding an enum entry for Annie: "AN".

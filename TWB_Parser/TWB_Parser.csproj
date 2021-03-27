@@ -82,7 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharEnum.cs" />
+    <Compile Include="MatchDataEnumTool.cs" />
     <Compile Include="CSVFileData.cs" />
     <Compile Include="CSVFileLine.cs" />
     <Compile Include="MySQLDatabase.cs" />
